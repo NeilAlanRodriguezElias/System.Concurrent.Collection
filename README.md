@@ -6,8 +6,8 @@ These collections should be used when they are getting changed or data is added/
 
 ## What are the commonly used concurrent collections we have?
 - ConcurrentDictionary -> Thread safe version of Dictionary
-- ConcurrentBag -> New thread safe unordered collection
 - ConcurrentQueue -> Thread safe version of generic queue (FIFO structure)
+- ConcurrentBag -> New thread safe unordered collection
 - ConcurrentStack -> Thread safe version of generic stack (LIFO structure)
 
 Another classes included in Concurrent collection:
