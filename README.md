@@ -64,8 +64,7 @@ Result in Dictionary: 189 ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** 
 ~~~
 
 Output:
-
-
+![](./Concu1.png)
 ### ConcurrentQueue
 
 ConcurrentQueue is a wrapper around generic Queue class. Queue class also provides FIFO data structure but it is not safe to use with multi-threading environment. To provide thread-safety, we have to implement locking around Queue methods which is always error prone.
