@@ -39,3 +39,12 @@ ints.Add(2);
  
 ConcurrentQueue<int> coll = new ConcurrentQueue<int>(ints);
 ~~~
+Concurrent Queue has exposed several other methods. Let's look at some of the commonly used ones.
+- [TryPeek](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.trypeek?view=net-5.0)
+Tries to return an object from the beginning of the ConcurrentQueue without removing it.
+~~~
+if (concurrentQueue.TryPeek(out result))
+            {
+                Console.WriteLine("Concurrent Peek first " + result);
+            }
+~~~
