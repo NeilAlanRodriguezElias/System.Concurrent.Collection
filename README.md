@@ -28,5 +28,22 @@ private static void DoTryAdd(string key, int value)
             Console.WriteLine("Is {0} Successfully added? {1}", key, phoneOrders.TryAdd(key, value));  
         }  
 ~~~
-The output:
-
+Calling the method to output:
+~~~
+Console.WriteLine("********************TryAdd********************");  
+//TryAdd returns true, if it successfully added.  
+string key1 = "Prakash";  
+int value1 = 5;  
+DoTryAdd(key1, value1);  
+string key2 = "Aradhana";  
+int value2 = 7;  
+DoTryAdd(key2, value2);  
+  
+string key3 = "DEF";  
+int value3 = 6;   
+DoTryAdd(key3, value3);  
+  
+////TryAdd returns false, if it failed to add due to duplicate key.   
+DoTryAdd(key2, value2);  
+PrintOrders();  
+~~~
