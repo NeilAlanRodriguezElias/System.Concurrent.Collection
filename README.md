@@ -5,10 +5,10 @@ Concurrent collections (Namespace: System.Collections.Concurrent) are basically 
 These collections should be used when they are getting changed or data is added/updated/deleted by multiple threads. If the requirement is only read in multithreaded environment then generic collections can be used.
 
 ## What are the commonly used concurrent collections we have?
-- ConcurrentDictionary -> Thread safe version of Dictionary
-- ConcurrentQueue -> Thread safe version of generic queue (FIFO structure)
-- ConcurrentBag -> New thread safe unordered collection
-- ConcurrentStack -> Thread safe version of generic stack (LIFO structure)
+- [ConcurrentDictionary](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentdictionary-2?view=net-5.0) -> Thread safe version of Dictionary
+- [ConcurrentQueue](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1?view=net-5.0) -> Thread safe version of generic queue (FIFO structure)
+- [ConcurrentBag](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentbag-1?view=net-5.0) -> New thread safe unordered collection
+- [ConcurrentStack](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentbag-1?view=net-5.0) -> Thread safe version of generic stack (LIFO structure)
 
 Another classes included in Concurrent collection:
 
@@ -40,6 +40,7 @@ ints.Add(2);
 ConcurrentQueue<int> coll = new ConcurrentQueue<int>(ints);
 ~~~
 Concurrent Queue has exposed several other methods. Let's look at some of the commonly used ones.
+- [TryDequeue](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.trydequeue?view=net-5.0#System_Collections_Concurrent_ConcurrentQueue_1_TryDequeue__0__)
 - [TryPeek](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.trypeek?view=net-5.0)
 Tries to return an object from the beginning of the ConcurrentQueue without removing it.
 ~~~
@@ -48,3 +49,5 @@ if (concurrentQueue.TryPeek(out result))
                 Console.WriteLine("Concurrent Peek first " + result);
             }
 ~~~
+
+
