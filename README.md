@@ -26,6 +26,46 @@ Concurrent Dictionary is the general purpose collection and can be used in most 
 - [AddOrUpdate](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentdictionary-2.addorupdate?view=net-5.0#System_Collections_Concurrent_ConcurrentDictionary_2_AddOrUpdate__0_System_Func__0__1__System_Func__0__1__1__) (Accepts the key, a value to add, and the update delegate.)
 - [GetOrAdd](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentdictionary-2.getoradd?view=net-5.0#System_Collections_Concurrent_ConcurrentDictionary_2_GetOrAdd__0__1_) (Overloads provide lazy initialization for a key/value pair in the dictionary, adding the value only if it's not there.)
 
+~~~
+public class Program {  
+    static Dictionary < string, int > _mydic = new Dictionary < string, int > ();  
+    static ConcurrentDictionary < string, int > _mydictConcu = new ConcurrentDictionary < string, int > ();  
+    static void Main() {  
+        Thread mythread1 = new Thread(new ThreadStart(InsertData));  
+        Thread mythread2 = new Thread(new ThreadStart(InsertData));  
+        mythread1.Start();  
+        mythread2.Start();  
+        mythread1.Join();  
+        mythread2.Join();  
+        Thread mythread11 = new Thread(new ThreadStart(InsertDataConcu));  
+        Thread mythread21 = new Thread(new ThreadStart(InsertDataConcu));  
+        mythread11.Start();  
+        mythread21.Start();  
+        mythread11.Join();  
+        mythread21.Join();  
+        Console.WriteLine($ "Result in Dictionary : {_mydic.Values.Count}");  
+        Console.WriteLine("********************************************");  
+        Console.WriteLine($ "Result in Concurrent Dictionary : {_mydictConcu.Values.Count}");  
+        Console.ReadKey();  
+    }  
+    static void InsertData() {  
+        for (int i = 0; i < 100; i++) {  
+            _mydic.Add(Guid.NewGuid().ToString(), i);  
+        }  
+    }  
+    static void InsertDataConcu() {  
+        for (int i = 0; i < 100; i++) {  
+            _mydictConcu.TryAdd(Guid.NewGuid().ToString(), i);  
+        }  
+    }  
+}  
+// Output    
+Result in Dictionary: 189 ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** Result in Concurrent Dictionary: 200
+~~~
+
+Output:
+
+
 ### ConcurrentQueue
 
 ConcurrentQueue is a wrapper around generic Queue class. Queue class also provides FIFO data structure but it is not safe to use with multi-threading environment. To provide thread-safety, we have to implement locking around Queue methods which is always error prone.
