@@ -40,9 +40,18 @@ ints.Add(2);
 ConcurrentQueue<int> coll = new ConcurrentQueue<int>(ints);
 ~~~
 Concurrent Queue has exposed several other methods. Let's look at some of the commonly used ones.
-- [TryDequeue](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.trydequeue?view=net-5.0#System_Collections_Concurrent_ConcurrentQueue_1_TryDequeue__0__)
+- [Clear](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.clear?view=net-5.0#System_Collections_Concurrent_ConcurrentQueue_1_Clear) (Removes all objects from the ConcurrentQueue.)
+- [CopyTo](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.copyto?view=net-5.0#System_Collections_Concurrent_ConcurrentQueue_1_CopyTo__0___System_Int32_) (Copies the ConcurrentQueue elements to an existing one-dimensional Array)
+- [Enqueue](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.enqueue?view=net-5.0#System_Collections_Concurrent_ConcurrentQueue_1_Enqueue__0_) (Adds an object to the end of the ConcurrentQueue.)
+- Equals
+- [GetEnumerator](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.getenumerator?view=net-5.0#System_Collections_Concurrent_ConcurrentQueue_1_GetEnumerator)
+- GetHashCode
+- GetType
+- MemberwiseClone
+- [ToArray](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.toarray?view=net-5.0#System_Collections_Concurrent_ConcurrentQueue_1_ToArray) (Copies the elements stored in the ConcurrentQueue<T> to a new array.)
+- [TryDequeue](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.trydequeue?view=net-5.0#System_Collections_Concurrent_ConcurrentQueue_1_TryDequeue__0__) (Tries to remove and return the object at the beginning of the concurrent queue.)
 - [TryPeek](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.trypeek?view=net-5.0)
-Tries to return an object from the beginning of the ConcurrentQueue without removing it.
+(Tries to return an object from the beginning of the ConcurrentQueue without removing it.)
 ~~~
 if (concurrentQueue.TryPeek(out result))
             {
