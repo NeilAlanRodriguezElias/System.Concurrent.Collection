@@ -66,15 +66,6 @@ Result in Dictionary: 189 ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** 
 
 ConcurrentQueue is a wrapper around generic Queue class. Queue class also provides FIFO data structure but it is not safe to use with multi-threading environment. To provide thread-safety, we have to implement locking around Queue methods which is always error prone.
 
-If we want to copy existing collection into our ConcurrentQueue class then we have to use second constructor. In the second constructor we can pass any collection class which implements the IEnumerable interface. Below is the example.
-
-~~~
-List<int> ints = new List<int>();
-ints.Add(1);
-ints.Add(2);
- 
-ConcurrentQueue<int> coll = new ConcurrentQueue<int>(ints);
-~~~
 Concurrent Queue has exposed several other methods. Let's look at some of the commonly used ones.
 - [Clear](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.clear?view=net-5.0#System_Collections_Concurrent_ConcurrentQueue_1_Clear) (Removes all objects from the ConcurrentQueue.)
 - [CopyTo](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.copyto?view=net-5.0#System_Collections_Concurrent_ConcurrentQueue_1_CopyTo__0___System_Int32_) (Copies the ConcurrentQueue elements to an existing one-dimensional Array)
@@ -88,11 +79,45 @@ Concurrent Queue has exposed several other methods. Let's look at some of the co
 - [TryDequeue](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.trydequeue?view=net-5.0#System_Collections_Concurrent_ConcurrentQueue_1_TryDequeue__0__) (Tries to remove and return the object at the beginning of the concurrent queue.)
 - [TryPeek](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.trypeek?view=net-5.0)
 (Tries to return an object from the beginning of the ConcurrentQueue without removing it.)
+
+
 ~~~
-if (concurrentQueue.TryPeek(out result))
+        public static Queue<int> genericQueue = new Queue<int>();
+        public static ConcurrentQueue<int> concurrentQueue = new ConcurrentQueue<int>();
+
+        public static void EnqueueNotConcurrent(){
+            for (int i = 0; i < 100; i++)
+            {
+                genericQueue.Enqueue(i);
+                Thread.Sleep(100);
+            }
+        }
+
+        public static void EnqueueConcurrent()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                concurrentQueue.Enqueue(i);
+                Thread.Sleep(100);
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            Thread threadNotConcurrent = new Thread(new ThreadStart(EnqueueNotConcurrent));
+            threadNotConcurrent.Start();
+            // Take out comment below to try genericQueuePeek
+            // Console.WriteLine("Generic Peek first " + genericQueue.Peek());
+
+            Thread threadConcurrent = new Thread(new ThreadStart(EnqueueConcurrent));
+            threadConcurrent.Start();
+            int result;
+            if (concurrentQueue.TryPeek(out result))
             {
                 Console.WriteLine("Concurrent Peek first " + result);
+            }else
+            {
+                Console.WriteLine("Concurrent Not peeked ");
             }
+        }
 ~~~
-
-
