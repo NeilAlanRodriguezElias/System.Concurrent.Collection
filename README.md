@@ -12,10 +12,10 @@ These collections should be used when they are getting changed or data is added/
 
 Another classes included in Concurrent collection:
 
-- BlockingCollection 
-- OrderablePartitioner (TSource) 
-- Partitioner 
-- Partitioner (TSource)
+- [BlockingCollection](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.blockingcollection-1?view=net-5.0)
+- [OrderablePartitioner](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.orderablepartitioner-1?view=net-5.0) 
+- [Partitioner](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.partitioner?view=net-5.0) 
+- [Partitioner (TSource)](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.partitioner-1?view=net-5.0)
 
 ### ConcurrentDictionary
 
