@@ -81,11 +81,11 @@ Example:
 The stack is one of the most basic data structures and also one of the most widely used. ConcurrentStack is like wrapper around Stack class. Stack class is not thread-safe. ConcurrentStack provides thread-safety. It internally uses locking to synchronize different threads.
 
 Its most important methods are:
-[Push](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentstack-1.push?view=net-5.0#System_Collections_Concurrent_ConcurrentStack_1_Push__0_) (T element) (This method is used to add data of type T.)
-[PushRange](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentstack-1.pushrange?view=net-5.0#System_Collections_Concurrent_ConcurrentStack_1_PushRange__0___) (This method can be used to add an array of items of type T.)
-[TryPop](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentstack-1.trypop?view=net-5.0#System_Collections_Concurrent_ConcurrentStack_1_TryPop__0__) (out T) (This method is used to retrieve the first element from the stack. It returns true on success, false otherwise.)
-[TryPeek](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentstack-1.trypeek?view=net-5.0#System_Collections_Concurrent_ConcurrentStack_1_TryPeek__0__) (out T) (This method is used to retrieve the next element from the stack but it doesn't remove the element from the stack. Note that similar to the TryPop(out T) method, it returns true on success and false otherwise.)
-[TryPopRange](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentstack-1.trypoprange?view=net-5.0#System_Collections_Concurrent_ConcurrentStack_1_TryPopRange__0___) (This method is overloaded and works similar to the TryPop but is used for retriving arrays from the stack)
+- [Push](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentstack-1.push?view=net-5.0#System_Collections_Concurrent_ConcurrentStack_1_Push__0_) (T element) (This method is used to add data of type T.)
+- [PushRange](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentstack-1.pushrange?view=net-5.0#System_Collections_Concurrent_ConcurrentStack_1_PushRange__0___) (This method can be used to add an array of items of type T.)
+- [TryPop](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentstack-1.trypop?view=net-5.0#System_Collections_Concurrent_ConcurrentStack_1_TryPop__0__) (out T) (This method is used to retrieve the first element from the stack. It returns true on success, false otherwise.)
+- [TryPeek](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentstack-1.trypeek?view=net-5.0#System_Collections_Concurrent_ConcurrentStack_1_TryPeek__0__) (out T) (This method is used to retrieve the next element from the stack but it doesn't remove the element from the stack. Note that similar to the TryPop(out T) method, it returns true on success and false otherwise.)
+- [TryPopRange](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentstack-1.trypoprange?view=net-5.0#System_Collections_Concurrent_ConcurrentStack_1_TryPopRange__0___) (This method is overloaded and works similar to the TryPop but is used for retriving arrays from the stack)
 
 ### ConcurrentQueue
 
