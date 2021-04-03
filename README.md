@@ -63,6 +63,7 @@ public class Program {
 // Output    
 Result in Dictionary: 189 ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** Result in Concurrent Dictionary: 200
 ~~~
+
 ### ConcurrentBag
 
 ConcurrentBag is a collection class that allows generic data to be stored in unordered from. It is a thread-safe class and allows multiple threads to use it.
@@ -86,6 +87,11 @@ Its most important methods are:
 - [TryPop](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentstack-1.trypop?view=net-5.0#System_Collections_Concurrent_ConcurrentStack_1_TryPop__0__) (out T) (This method is used to retrieve the first element from the stack. It returns true on success, false otherwise.)
 - [TryPeek](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentstack-1.trypeek?view=net-5.0#System_Collections_Concurrent_ConcurrentStack_1_TryPeek__0__) (out T) (This method is used to retrieve the next element from the stack but it doesn't remove the element from the stack. Note that similar to the TryPop(out T) method, it returns true on success and false otherwise.)
 - [TryPopRange](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentstack-1.trypoprange?view=net-5.0#System_Collections_Concurrent_ConcurrentStack_1_TryPopRange__0___) (This method is overloaded and works similar to the TryPop but is used for retriving arrays from the stack)
+
+Example:
+~~~
+
+~~~
 
 ### ConcurrentQueue
 
