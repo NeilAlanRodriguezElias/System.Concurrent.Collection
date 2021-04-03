@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CLEAN MARKUP = GOOD KARMA.
+      Hi source code lover,
+
+      you're a curious person and a fast learner ;)
+      Let's make something beautiful together. Contribute on Github:
+      https://github.com/webslides/webslides
+
+      Thanks,
+      @jlantunez.
+    -->
+
+    <!-- SEO -->
+    <title>C# Concurrent Collections</title>
+    <meta name="description" content="Concurrent Collections C#.">
+
+    <!-- URL CANONICAL -->
+    <!-- <link rel="canonical" href="http://your-url.com/"> -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- CSS WebSlides -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/webslides.css">
+
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/svg-icons.css">
+
+    <!-- SOCIAL CARDS (ADD YOUR INFO) -->
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" sizes="16x16" href="static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="static/images/favicons/favicon-192.png">
+
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+
+  </head>
+  <body>
+    <header role="banner">
+      <nav role="navigation">
+        <p class="logo"><a href="index.html" title="WebSlides">JALA BC</a></p>
+      </nav>
+    </header>
+
+    <main role="main">
+      <article id="webslides" class="vertical">
+        <!-- Quick Guide
+          - Each parent <section> in the <article id="webslides"> element is an individual slide.
+          - Vertical sliding = <article id="webslides" class="vertical">
+          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+
+        <section>
+         <span class="background" style="background-image:url('https://wallpaper.dog/large/5486501.png')"></span>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap aligncenter">
+            <h1><strong>Concurrent Collections</strong></h1>
+            <p class="text-intro">Brief presetation for C# System.Concurrent.Collection.
+            </p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3><strong>What are the Concurrent collections and when to use them?</strong></h3>
+                <p class="text-intro">They thread safe collections and are designed to be used in multithreading environment. </p>
+                <p>Besides being several safe collection-type classes for threads that actually work 
+                  as common collections, they allow several threads to access the collection at the same time.
+                  These collections should be used when they are getting changed or data is added/updated/deleted 
+                  by multiple threads. If the requirement is only read in multithreaded environment then generic 
+                  collections can be used.
+                  </p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>
+                  using System;
+                  using System.Collections.Concurrent;
+                  ...
+                  ConcurrentQueue< int > cq = new ConcurrentQueue< int >();
+                  ConcurrentStack< int > stack = new ConcurrentStack< int >();
+                  ConcurrentBag< int > cb = new ConcurrentBag< int >();
+                  ...
+                </pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap size-50 aligncenter">
+            <h2><strong>What are the commonly used concurrent collections we have?</strong></h2>
+            <p class="text-intro"><a href="demos/why-webslides.html" title="Why WebSlides?">Presentations</a>, <a href="demos/landings.html" title="Landings">landings</a>, <a href="demos/portfolios.html" title="Portfolios">portfolios</a>, and <a href="demos/longforms.html" title="Longforms">longforms</a>.</p>
+            <div class="bg-white shadow">
+              <ul class="flexblock reasons">
+                <li>
+                  <h2>ConcurrentDictionary.</h2>
+                  <p>Thread safe version of Dictionary.</p>
+                </li>
+                <li>
+                  <h2>ConcurrentBag .</h2>
+                  <p>New thread safe unordered collection.</p>
+                </li>
+                <li>
+                  <h2>ConcurrentStack.</h2>
+                  <p> Thread safe version of generic stack (LIFO structure).</p>
+                </li>
+                <li>
+                  <h2>ConcurrentQueue .</h2>
+                  <p>Thread safe version of generic queue (FIFO structure).</p>
+                </li>
+              </ul>
+            </div>
+            <!-- .end .bg-white shadow -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+          <!-- .wrap = container (width: 90%) -->
+        <section> 
+          <div class="wrap">
+            <h2><strong>ConcurrentDictionary</strong> </h2>
+            <p class="text-intro">
+              Concurrent Dictionary is the general purpose collection and can be used in most of the cases. It has exposed several methods and properties and commonly used methods are as follows:
+            </p>
+            <ul>
+              <li>TryAdd (Adds the specified key/value pair, if the key doesn't currently exist in the dictionary)</li>
+              <li>TryUpdate (Checks whether the key has a specified value, and if it does, updates the key with a new value.)</li>
+              <li>AddOrUpdate (Accepts the key, a value to add, and the update delegate.)</li>
+              <li>GetOrAdd (Overloads provide lazy initialization for a key/value pair in the dictionary, adding the value only if it's not there.)</li>
+            </ul>
+          </div>
+        </section>
+          <!-- .end .wrap -->
+                    <!-- .wrap = container (width: 90%) -->
+        <section> 
+          <div class="wrap">
+            <h2><strong>ConcurrentBag</strong> </h2>
+            <p class="text-intro">
+              ConcurrentBag is a collection class that allows generic data to be stored in unordered from. It is a thread-safe class and allows multiple threads to use it.
+            Here's the list of the important methods of the ConcurrentBag class:
+            </p>
+            <ul>
+              <li>Add(T element) (This method is used to add an element to the ConcurrentBag)</li>
+              <li>TryPeek(out T) This method is used to retrieve an element from ConcurrentBag without removing it.</li>
+              <li>TryTake(out T) This method is used to retrieve an element from ConcurrentBag. Note that this method removes the item from the collection.</li>
+            </ul>
+          </div>
+        </section>
+          <!-- .end .wrap -->
+                    <!-- .wrap = container (width: 90%) -->
+        <section> 
+          <div class="wrap">
+            <h2><strong>ConcurrentStack</strong> </h2>
+            <p class="text-intro">
+              The stack is one of the most basic data structures and also one of the most widely used. 
+              ConcurrentStack is like wrapper around Stack class. Stack class is not thread-safe. 
+              ConcurrentStack provides thread-safety. It internally uses locking to synchronize different threads.
+              Its most important methods are:
+            </p>
+            <ul>
+              <li>Push (T element) (This method is used to add data of type T.)</li>
+              <li>PushRange (This method can be used to add an array of items of type T.)</li>
+              <li>TryPop (out T) (This method is used to retrieve the first element from the stack. It returns true on success, false otherwise.)</li>
+              <li>TryPeek (out T) (This method is used to retrieve the next element from the stack but it doesn't remove the element from the stack. Note that similar to the TryPop(out T) method, it returns true on success and false otherwise.)</li>
+              <li>TryPopRange (This method is overloaded and works similar to the TryPop but is used for retriving arrays from the stack)</li>
+            </ul>
+          </div>
+        </section>
+          <!-- .end .wrap -->
+                    <!-- .wrap = container (width: 90%) -->
+        <section> 
+          <div class="wrap">
+            <h2><strong>ConcurrentQueue</strong> </h2>
+            <p class="text-intro">
+              ConcurrentQueue is a wrapper around generic Queue class. Queue class also provides FIFO data 
+              structure but it is not safe to use with multi-threading environment. To provide thread-safety, 
+              we have to implement locking around Queue methods which is always error prone.
+              Concurrent Queue has exposed several other methods. Let's look at some of the commonly used ones:
+            </p>
+            <ul>
+              <li>Enqueue (Adds an object to the end of the ConcurrentQueue.)</li>
+              <li>TryDequeue (Tries to remove and return the object at the beginning of the concurrent queue.)</li>
+              <li>TryPeek (Tries to return an object from the beginning of the ConcurrentQueue without removing it.)</li>
+            </ul>
+          </div>
+        </section>
+          <!-- .end .wrap -->
+        <section class="slide-bottom">
+          <div class="wrap">
+            <div class="content-right text-serif">
+              <h2>
+                <strong>Thanks.</strong>
+              </h2>
+              <p></p> 
+              <p>Best,<br> <a href="#">Alan Rodriguez Elias</a> and <a href="#">Antonio Pantoja</a>.</p>
+            </div>
+            <!-- .end .content-right -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+      </article>
+      <!-- end article -->
+    </main>
+    <!-- end main -->
+
+   <!-- A global footer
+
+     <footer role="contentinfo">
+      <div class="wrap">
+        <p>An <a href="https://github.com/webslides/webslides">open source solution</a>, by <a href="https://twitter.com/webslides">@webslides</a>.</p>
+      </div>
+    </footer>  -->
+
+    <!-- Required -->
+    <script src="static/js/webslides.js"></script>
+    <script>
+      window.ws = new WebSlides();
+    </script>
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <script defer src="static/js/svg-icons.js"></script>
+
+  </body>
+</html>
