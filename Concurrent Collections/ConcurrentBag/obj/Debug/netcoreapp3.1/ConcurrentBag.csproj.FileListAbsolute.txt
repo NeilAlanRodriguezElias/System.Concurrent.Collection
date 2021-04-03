@@ -1,0 +1,13 @@
+C:\Users\gaaps\source\repos\System.Concurrent.Collection\Concurrent Collections\ConcurrentBag\bin\Debug\netcoreapp3.1\ConcurrentBag.exe
+C:\Users\gaaps\source\repos\System.Concurrent.Collection\Concurrent Collections\ConcurrentBag\bin\Debug\netcoreapp3.1\ConcurrentBag.deps.json
+C:\Users\gaaps\source\repos\System.Concurrent.Collection\Concurrent Collections\ConcurrentBag\bin\Debug\netcoreapp3.1\ConcurrentBag.runtimeconfig.json
+C:\Users\gaaps\source\repos\System.Concurrent.Collection\Concurrent Collections\ConcurrentBag\bin\Debug\netcoreapp3.1\ConcurrentBag.runtimeconfig.dev.json
+C:\Users\gaaps\source\repos\System.Concurrent.Collection\Concurrent Collections\ConcurrentBag\bin\Debug\netcoreapp3.1\ConcurrentBag.dll
+C:\Users\gaaps\source\repos\System.Concurrent.Collection\Concurrent Collections\ConcurrentBag\bin\Debug\netcoreapp3.1\ConcurrentBag.pdb
+C:\Users\gaaps\source\repos\System.Concurrent.Collection\Concurrent Collections\ConcurrentBag\obj\Debug\netcoreapp3.1\ConcurrentBag.csprojAssemblyReference.cache
+C:\Users\gaaps\source\repos\System.Concurrent.Collection\Concurrent Collections\ConcurrentBag\obj\Debug\netcoreapp3.1\ConcurrentBag.AssemblyInfoInputs.cache
+C:\Users\gaaps\source\repos\System.Concurrent.Collection\Concurrent Collections\ConcurrentBag\obj\Debug\netcoreapp3.1\ConcurrentBag.AssemblyInfo.cs
+C:\Users\gaaps\source\repos\System.Concurrent.Collection\Concurrent Collections\ConcurrentBag\obj\Debug\netcoreapp3.1\ConcurrentBag.csproj.CoreCompileInputs.cache
+C:\Users\gaaps\source\repos\System.Concurrent.Collection\Concurrent Collections\ConcurrentBag\obj\Debug\netcoreapp3.1\ConcurrentBag.dll
+C:\Users\gaaps\source\repos\System.Concurrent.Collection\Concurrent Collections\ConcurrentBag\obj\Debug\netcoreapp3.1\ConcurrentBag.pdb
+C:\Users\gaaps\source\repos\System.Concurrent.Collection\Concurrent Collections\ConcurrentBag\obj\Debug\netcoreapp3.1\ConcurrentBag.genruntimeconfig.cache

@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\gaaps\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\gaaps\\.nuget\\packages"
+    ]
+  }
+}
