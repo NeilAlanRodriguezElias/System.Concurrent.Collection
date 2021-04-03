@@ -19,7 +19,7 @@ Another classes included in Concurrent collection:
 
 ### ConcurrentDictionary
 
-Concurrent Dictionary is the general purpose collection and can be used in most of the cases. It has exposed several methods and properties and commonly used methods are as follows.
+Concurrent Dictionary is the general purpose collection and can be used in most of the cases. It has exposed several methods and properties and commonly used methods are as follows:
 
 - [TryAdd](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentdictionary-2.tryadd?view=net-5.0https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentdictionary-2.tryadd?view=net-5.0) (Adds the specified key/value pair, if the key doesn't currently exist in the dictionary)
 - [TryUpdate](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentdictionary-2.tryupdate?view=net-5.0) (Checks whether the key has a specified value, and if it does, updates the key with a new value.)
@@ -67,26 +67,33 @@ Result in Dictionary: 189 ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** 
 
 ConcurrentBag is a collection class that allows generic data to be stored in unordered from. It is a thread-safe class and allows multiple threads to use it.
 
-Here's the list of the important methods of the ConcurrentBag class.
-- [Add](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentbag-1.add?view=net-5.0#System_Collections_Concurrent_ConcurrentBag_1_Add__0_)(T element) - This method is used to add an element to the ConcurrentBag
-- [TryPeek](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentbag-1.trypeek?view=net-5.0#System_Collections_Concurrent_ConcurrentBag_1_TryPeek__0__)(out T) - This method is used to retrieve an element from ConcurrentBag without removing it.
-- [TryTake](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentbag-1.trytake?view=net-5.0#System_Collections_Concurrent_ConcurrentBag_1_TryTake__0__)(out T) - This method is used to retrieve an element from ConcurrentBag. Note that this method removes the item from the collection.
+Here's the list of the important methods of the ConcurrentBag class:
+- [Add](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentbag-1.add?view=net-5.0#System_Collections_Concurrent_ConcurrentBag_1_Add__0_)(T element) (This method is used to add an element to the ConcurrentBag)
+- [TryPeek](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentbag-1.trypeek?view=net-5.0#System_Collections_Concurrent_ConcurrentBag_1_TryPeek__0__)(out T) This method is used to retrieve an element from ConcurrentBag without removing it.
+- [TryTake](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentbag-1.trytake?view=net-5.0#System_Collections_Concurrent_ConcurrentBag_1_TryTake__0__)(out T) This method is used to retrieve an element from ConcurrentBag. Note that this method removes the item from the collection.
+
+Example:
+~~~
+
+~~~
+
 ### ConcurrentStack
+The stack is one of the most basic data structures and also one of the most widely used. ConcurrentStack is like wrapper around Stack class. Stack class is not thread-safe. ConcurrentStack provides thread-safety. It internally uses locking to synchronize different threads.
+
+Its most important methods are:
+[Push](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentstack-1.push?view=net-5.0#System_Collections_Concurrent_ConcurrentStack_1_Push__0_) (T element) (This method is used to add data of type T.)
+[PushRange](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentstack-1.pushrange?view=net-5.0#System_Collections_Concurrent_ConcurrentStack_1_PushRange__0___) (This method can be used to add an array of items of type T.)
+[TryPop](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentstack-1.trypop?view=net-5.0#System_Collections_Concurrent_ConcurrentStack_1_TryPop__0__) (out T) (This method is used to retrieve the first element from the stack. It returns true on success, false otherwise.)
+[TryPeek](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentstack-1.trypeek?view=net-5.0#System_Collections_Concurrent_ConcurrentStack_1_TryPeek__0__) (out T) (This method is used to retrieve the next element from the stack but it doesn't remove the element from the stack. Note that similar to the TryPop(out T) method, it returns true on success and false otherwise.)
+[TryPopRange](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentstack-1.trypoprange?view=net-5.0#System_Collections_Concurrent_ConcurrentStack_1_TryPopRange__0___) (This method is overloaded and works similar to the TryPop but is used for retriving arrays from the stack)
+
 ### ConcurrentQueue
 
 ConcurrentQueue is a wrapper around generic Queue class. Queue class also provides FIFO data structure but it is not safe to use with multi-threading environment. To provide thread-safety, we have to implement locking around Queue methods which is always error prone.
 
-Concurrent Queue has exposed several other methods. Let's look at some of the commonly used ones.
-- [Clear](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.clear?view=net-5.0#System_Collections_Concurrent_ConcurrentQueue_1_Clear) (Removes all objects from the ConcurrentQueue.)
-- [CopyTo](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.copyto?view=net-5.0#System_Collections_Concurrent_ConcurrentQueue_1_CopyTo__0___System_Int32_) (Copies the ConcurrentQueue elements to an existing one-dimensional Array)
+Concurrent Queue has exposed several other methods. Let's look at some of the commonly used ones:
 - [Enqueue](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.enqueue?view=net-5.0#System_Collections_Concurrent_ConcurrentQueue_1_Enqueue__0_) (Adds an object to the end of the ConcurrentQueue.)
-- Equals
-- [GetEnumerator](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.getenumerator?view=net-5.0#System_Collections_Concurrent_ConcurrentQueue_1_GetEnumerator)
-- GetHashCode
-- GetType
-- MemberwiseClone
-- [ToArray](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.toarray?view=net-5.0#System_Collections_Concurrent_ConcurrentQueue_1_ToArray) (Copies the elements stored in the ConcurrentQueue<T> to a new array.)
-- [TryDequeue](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.trydequeue?view=net-5.0#System_Collections_Concurrent_ConcurrentQueue_1_TryDequeue__0__) (Tries to remove and return the object at the beginning of the concurrent queue.)
+- [TryDequeue](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.trydequeue?view=net-5.0) (Tries to remove and return the object at the beginning of the concurrent queue.)
 - [TryPeek](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.trypeek?view=net-5.0)
 (Tries to return an object from the beginning of the ConcurrentQueue without removing it.)
 
