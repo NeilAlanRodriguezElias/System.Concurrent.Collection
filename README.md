@@ -6,9 +6,9 @@ These collections should be used when they are getting changed or data is added/
 
 ## What are the commonly used concurrent collections we have?
 - [ConcurrentDictionary](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentdictionary-2?view=net-5.0) -> Thread safe version of Dictionary
-- [ConcurrentQueue](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1?view=net-5.0) -> Thread safe version of generic queue (FIFO structure)
 - [ConcurrentBag](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentbag-1?view=net-5.0) -> New thread safe unordered collection
 - [ConcurrentStack](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentbag-1?view=net-5.0) -> Thread safe version of generic stack (LIFO structure)
+- [ConcurrentQueue](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1?view=net-5.0) -> Thread safe version of generic queue (FIFO structure)
 
 Another classes included in Concurrent collection:
 
@@ -26,6 +26,7 @@ Concurrent Dictionary is the general purpose collection and can be used in most 
 - [AddOrUpdate](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentdictionary-2.addorupdate?view=net-5.0#System_Collections_Concurrent_ConcurrentDictionary_2_AddOrUpdate__0_System_Func__0__1__System_Func__0__1__1__) (Accepts the key, a value to add, and the update delegate.)
 - [GetOrAdd](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentdictionary-2.getoradd?view=net-5.0#System_Collections_Concurrent_ConcurrentDictionary_2_GetOrAdd__0__1_) (Overloads provide lazy initialization for a key/value pair in the dictionary, adding the value only if it's not there.)
 
+Example:
 ~~~
 public class Program {  
     static Dictionary < string, int > _mydic = new Dictionary < string, int > ();  
@@ -62,6 +63,15 @@ public class Program {
 // Output    
 Result in Dictionary: 189 ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** Result in Concurrent Dictionary: 200
 ~~~
+### ConcurrentBag
+
+ConcurrentBag is a collection class that allows generic data to be stored in unordered from. It is a thread-safe class and allows multiple threads to use it.
+
+Here's the list of the important methods of the ConcurrentBag class.
+- [Add](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentbag-1.add?view=net-5.0#System_Collections_Concurrent_ConcurrentBag_1_Add__0_)(T element) - This method is used to add an element to the ConcurrentBag
+- [TryPeek](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentbag-1.trypeek?view=net-5.0#System_Collections_Concurrent_ConcurrentBag_1_TryPeek__0__)(out T) - This method is used to retrieve an element from ConcurrentBag without removing it.
+- [TryTake](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentbag-1.trytake?view=net-5.0#System_Collections_Concurrent_ConcurrentBag_1_TryTake__0__)(out T) - This method is used to retrieve an element from ConcurrentBag. Note that this method removes the item from the collection.
+### ConcurrentStack
 ### ConcurrentQueue
 
 ConcurrentQueue is a wrapper around generic Queue class. Queue class also provides FIFO data structure but it is not safe to use with multi-threading environment. To provide thread-safety, we have to implement locking around Queue methods which is always error prone.
@@ -80,7 +90,7 @@ Concurrent Queue has exposed several other methods. Let's look at some of the co
 - [TryPeek](https://docs.microsoft.com/en-us/dotnet/api/system.collections.concurrent.concurrentqueue-1.trypeek?view=net-5.0)
 (Tries to return an object from the beginning of the ConcurrentQueue without removing it.)
 
-
+Example:
 ~~~
         public static Queue<int> genericQueue = new Queue<int>();
         public static ConcurrentQueue<int> concurrentQueue = new ConcurrentQueue<int>();
