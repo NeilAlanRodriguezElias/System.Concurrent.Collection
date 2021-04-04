@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentBag\\ConcurrentBag.csproj",
-      "projectName": "ConcurrentBag",
-      "projectPath": "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentBag\\ConcurrentBag.csproj",
+      "projectUniqueName": "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentStackExample\\ConcurrentStackExample.csproj",
+      "projectName": "ConcurrentStackExample",
+      "projectPath": "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentStackExample\\ConcurrentStackExample.csproj",
       "packagesPath": "C:\\Users\\Desktop\\.nuget\\packages\\",
-      "outputPath": "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentBag\\obj\\",
+      "outputPath": "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentStackExample\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Desktop\\AppData\\Roaming\\NuGet\\NuGet.Config",

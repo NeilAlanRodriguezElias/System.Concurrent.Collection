@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentBag\\ConcurrentBag.csproj": {}
+    "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentQueueExample\\ConcurrentQueueExample.csproj": {}
   },
   "projects": {
-    "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentBag\\ConcurrentBag.csproj": {
+    "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentQueueExample\\ConcurrentQueueExample.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentBag\\ConcurrentBag.csproj",
-        "projectName": "ConcurrentBag",
-        "projectPath": "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentBag\\ConcurrentBag.csproj",
+        "projectUniqueName": "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentQueueExample\\ConcurrentQueueExample.csproj",
+        "projectName": "ConcurrentQueueExample",
+        "projectPath": "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentQueueExample\\ConcurrentQueueExample.csproj",
         "packagesPath": "C:\\Users\\Desktop\\.nuget\\packages\\",
-        "outputPath": "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentBag\\obj\\",
+        "outputPath": "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentQueueExample\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Desktop\\AppData\\Roaming\\NuGet\\NuGet.Config",
