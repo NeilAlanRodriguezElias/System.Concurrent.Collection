@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\gaaps\\.nuget\\packages\\": {}
+    "C:\\Users\\Desktop\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gaaps\\source\\repos\\System.Concurrent.Collection\\Concurrent Collections\\ConcurrentBag\\ConcurrentBag.csproj",
+      "projectUniqueName": "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentBag\\ConcurrentBag.csproj",
       "projectName": "ConcurrentBag",
-      "projectPath": "C:\\Users\\gaaps\\source\\repos\\System.Concurrent.Collection\\Concurrent Collections\\ConcurrentBag\\ConcurrentBag.csproj",
-      "packagesPath": "C:\\Users\\gaaps\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gaaps\\source\\repos\\System.Concurrent.Collection\\Concurrent Collections\\ConcurrentBag\\obj\\",
+      "projectPath": "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentBag\\ConcurrentBag.csproj",
+      "packagesPath": "C:\\Users\\Desktop\\.nuget\\packages\\",
+      "outputPath": "E:\\Classes\\JALA\\BackEnd\\ConcurrentCollections\\presentation\\Concurrent Collections\\ConcurrentBag\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\gaaps\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Desktop\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
